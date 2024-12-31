@@ -51,8 +51,10 @@ func (p *Prediction) UnmarshalJSON(data []byte) error {
 	return json.Unmarshal(data, alias)
 }
 
-type PredictionInput map[string]interface{}
-type PredictionOutput interface{}
+type (
+	PredictionInput  map[string]interface{}
+	PredictionOutput interface{}
+)
 
 type PredictionMetrics struct {
 	PredictTime      *float64 `json:"predict_time,omitempty"`

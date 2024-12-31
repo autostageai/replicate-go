@@ -18,9 +18,7 @@ import (
 	"github.com/replicate/replicate-go/streaming"
 )
 
-var (
-	ErrInvalidUTF8Data = errors.New("invalid UTF-8 data")
-)
+var ErrInvalidUTF8Data = errors.New("invalid UTF-8 data")
 
 const (
 	// SSETypeDefault is the default type of SSEEvent.
@@ -224,7 +222,6 @@ var _ streaming.File = &dataURL{}
 
 func (d *dataURL) Body(_ context.Context) (io.ReadCloser, error) {
 	data, err := dataurl.DecodeString(d.url)
-
 	if err != nil {
 		return nil, err
 	}
@@ -422,7 +419,6 @@ func (r *Client) streamPrediction(ctx context.Context, prediction *Prediction, l
 
 	go func() {
 		err := g.Wait()
-
 		if err != nil {
 			if errors.Is(err, io.EOF) {
 				select {

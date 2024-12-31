@@ -6,8 +6,10 @@ import (
 	"net/http"
 )
 
-type Training Prediction
-type TrainingInput PredictionInput
+type (
+	Training      Prediction
+	TrainingInput PredictionInput
+)
 
 // CreateTraining sends a request to the Replicate API to create a new training.
 func (r *Client) CreateTraining(ctx context.Context, modelOwner string, modelName string, version string, destination string, input TrainingInput, webhook *Webhook) (*Training, error) {
