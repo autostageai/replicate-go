@@ -6,9 +6,7 @@ import (
 	"strings"
 )
 
-var (
-	ErrInvalidIdentifier = errors.New("invalid identifier, it must be in the format \"owner/name\" or \"owner/name:version\"")
-)
+var ErrInvalidIdentifier = errors.New("invalid identifier, it must be in the format \"owner/name\" or \"owner/name:version\"")
 
 // Identifier represents a reference to a Replicate model with an optional version.
 type Identifier struct {

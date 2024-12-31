@@ -105,7 +105,6 @@ data: foo
 id: 1
 
 `)
-
 		}
 		fmt.Fprint(w, `event: output
 data: bar
